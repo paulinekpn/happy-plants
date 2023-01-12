@@ -1,0 +1,116 @@
+body {
+    background-color: rgb(255, 251, 232);
+    font-family: 'Chivo Mono', monospace;
+    overflow-x: hidden
+}
+
+h1 {
+    /* font-size: 25x; */
+    font-weight: bold;
+    text-align: center;
+}
+
+.navigationBar {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* homepage - existing plants cards  */
+
+.plantPage {
+    margin: 50px;
+    display: inline-flex;
+    justify-content: center;
+    min-width: 95%;
+    flex-wrap: wrap;
+}
+
+.plantInfoCard {
+    background-color: rgb(221, 255, 142);
+    border: none;
+    border-radius: 110px;
+    padding: 20px 20px 60px 30px;
+    width: 335px;
+    height: 490px;
+    margin-bottom: 35px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.plantInfoCard h4 {
+    text-align: center;
+}
+
+.plantInfoCard p {
+    text-align: left;
+}
+
+/* Adding a new plant form  */
+h3 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.newPlantBox {
+    display: flex;
+    justify-content: center;
+}
+
+.newPlant {
+    /* text-align: center; */
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    /* justify-content: center; */
+    width: 380px;
+    padding: 1px 0px 10px 25px;
+    background-color:rgb(199, 208, 199);
+    border: none;
+    margin: 0px 150px 0px 150px;
+}
+
+
+input {
+    /* padding: 10px; */
+    /* width: 200px; */
+    border-radius: 0px;
+    border: 0.5px solid grey
+}
+
+textarea {
+    border-radius: 0px;
+    border: 0.5px solid grey
+}
+
+.newButtons {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 20px 3px 5px;
+}
+
+form #uploadButton {
+    background-color: rgb(78, 150, 18);
+    border: none;
+    color:white;
+    width: 130px;
+    height: 25px;
+    cursor: pointer;
+    padding: 5px 15px 5px 15px;
+    font-family: 'Chivo Mono', monospace;
+    font-weight: bold;
+}
+
+form #add {
+    background-color: rgb(78, 150, 18);
+    border: none;
+    color:white;
+    width: 125px;
+    height: 25px;
+    cursor: pointer;
+    padding: 5px 15px 5px 15px;
+    font-family: 'Chivo Mono', monospace;
+    font-weight: bold;
+
+}
