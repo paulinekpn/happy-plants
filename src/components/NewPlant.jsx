@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 function NewPlantInfo() {
     const [plantName, setName] = useState('');
-    // const [plantImg, setImg] = useState('');
     const [dateAdopted, setDate] = useState('');
     const [wateringSchedule, setSchedule] = useState('');
     const [sunlight, setSunlight] = useState('');
@@ -31,7 +30,7 @@ function NewPlantInfo() {
         const json = await response.json()
 
         if (!response.ok) {
-            setError(json.error) //sends error if response from the router doesnt go through
+            setError(json.err) //sends error if response from the router doesnt go through
         }
 
         if (response.ok) {
@@ -40,21 +39,10 @@ function NewPlantInfo() {
             setSchedule(''); //resets form
             setSunlight(''); //resets form
             setNotes(''); //resets form
-            setError(null);
+            // setError(null);
             console.log('new plant added', json)
         }
     }
-
-
-    const handleClick = event => {
-        hiddenFileInput.current.click();
-      };
-
-    const fileSelectedHandler = event => {
-        console.log('selected file');
-        const fileUploaded = event.target.files[0];
-        props.handleFile(fileUploaded);
-    };
 
     return (
         <div className="newPlantBox">
@@ -102,14 +90,15 @@ function NewPlantInfo() {
                 value={additionalNotes}
                 /> */}
                 
+                
                 <div className="newButtons">
-                    <button id="uploadButton">Upload Image</button>
-                    <input type='file' id="upload" style={{display: 'none'}} />
-                    <br />
-                    <input type="submit" id="add" value="Add" />
+                <button id="uploadButton">Upload Image</button>
+                <input type='file' id="upload" style={{display: 'none'}} />
+                <br />
+                <input type="submit" id="add" value="Add" />
                 </div>
-
-                {error && <div className="error">{error}</div>}
+                {/* <button>Add Plant</button> */}
+                {/* {err && <div className="error">{error}</div>} //if there is an error this shows error */}
 
             </form>
         </div>

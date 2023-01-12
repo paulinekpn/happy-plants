@@ -22,11 +22,7 @@ const plantsSchema = new Schema({
     additional_notes: {
         type: String,
         required: true
-    },
-    plant_img: {
-        type: String,
-        required: true
-    },
+    }
 });
 
 const Plants = mongoose.model('Plants', plantsSchema);
