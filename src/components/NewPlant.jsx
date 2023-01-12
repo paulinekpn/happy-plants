@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { usePlantsContext } from '../hooks/usePlantsContext';
 
 function NewPlantInfo() {
+    const {dispatch} = usePlantsContext();
     const [plantName, setName] = useState('');
     const [dateAdopted, setDate] = useState('');
     const [wateringSchedule, setSchedule] = useState('');
@@ -30,7 +32,7 @@ function NewPlantInfo() {
         const json = await response.json()
 
         if (!response.ok) {
-            setError(json.err) //sends error if response from the router doesnt go through
+            setError(json.error) //sends error if response from the router doesnt go through
         }
 
         if (response.ok) {
@@ -39,8 +41,9 @@ function NewPlantInfo() {
             setSchedule(''); //resets form
             setSunlight(''); //resets form
             setNotes(''); //resets form
-            // setError(null);
+            setError(null);
             console.log('new plant added', json)
+            dispatch({type:'NEW_PLANT', payload: json})
         }
     }
 
@@ -98,7 +101,7 @@ function NewPlantInfo() {
                 <input type="submit" id="add" value="Add" />
                 </div>
                 {/* <button>Add Plant</button> */}
-                {/* {err && <div className="error">{error}</div>} //if there is an error this shows error */}
+                {error && <div className="error">{error}</div>}
 
             </form>
         </div>

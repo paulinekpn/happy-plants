@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import PlantInfo from './PlantInfo.jsx';
+import { usePlantsContext } from '../hooks/usePlantsContext';
 
 function Homepage() {
-    const [plants, setPlants] = useState([]);
+    // const [plants, setPlants] = useState([]);
+    const {plants, dispatch} = usePlantsContext();
 
     useEffect(() => {
         console.log('useEffect ran');
@@ -14,7 +16,8 @@ function Homepage() {
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
-                setPlants(data)
+                // setPlants(data)
+                dispatch({type:'SET_PLANTS', payload: data})
             })
             .catch((error) => console.log("ERROR"));
     }, []) 

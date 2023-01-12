@@ -4,11 +4,11 @@ import NewPlantInfo from './NewPlant.jsx';
 import Navbar from './Navbar.jsx';
 import '../styles.css';
 import { Routes, Route } from 'react-router-dom';
-// import { PlantsContextProvider } from '../context/PlantsContext'
+import { PlantsContextProvider } from '../context/PlantsContext'
 
 function App() {
   return (
-      // <PlantsContextProvider>
+      <PlantsContextProvider>
         <div>
           <Navbar />
           <h1>Happy Plants - Library</h1>
@@ -18,7 +18,7 @@ function App() {
                 <NewPlantInfo />
                 <Plantpage />
         </div>
-      // </PlantsContextProvider>
+      </PlantsContextProvider>
 
   )
 }
