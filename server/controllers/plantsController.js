@@ -47,7 +47,7 @@ plantsController.getOnePlant =  (req, res, next) => {
 
 
 plantsController.deletePlant =  (req, res, next) => {
-  models.Plants.findOneAndDelete(req.params.id)
+  models.Plants.findOneAndDelete({_id: req.params.id})
     .then(deletePlant => {
       res.locals.deletePlant = deletePlant;
       next();

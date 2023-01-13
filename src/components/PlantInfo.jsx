@@ -14,6 +14,7 @@ function PlantInfo({key, plant}) {
         })
 
         const data = await response.json();
+        console.log('going to delete this object id',data)
  
         if (response.ok) {
             dispatch({type:'DELETE_PLANT', payload: data})
