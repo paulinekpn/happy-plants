@@ -27,6 +27,11 @@ function PlantInfo({key, plant}) {
             <h4>{plant.plant_name}</h4>
             <br /><br /><br /><br /><br /><br />
             <br /><br /><br /><br /><br /><br />
+            <img 
+                src="https://www.nicepng.com/png/full/692-6929718_cartoon-plant-cactaceae-drawing.png"
+                id="plantImg"
+                alt="new"
+                />
             <p><strong>Date Adopted: </strong>{plant.date_adopted}</p>
             <p><strong>Watering Schedule: </strong>{plant.watering}</p>
             <p><strong>Sunlight Needs: </strong>{plant.sunlight}</p>
