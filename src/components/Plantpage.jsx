@@ -20,7 +20,7 @@ function Homepage() {
                 dispatch({type:'SET_PLANTS', payload: data})
             })
             .catch((error) => console.log("ERROR"));
-    }, []) 
+        }, []) 
 
     const displayPlants = []
     if (plants) {

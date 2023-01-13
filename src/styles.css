@@ -37,6 +37,7 @@ h1 {
     margin-bottom: 35px;
     margin-left: 30px;
     margin-right: 30px;
+    position: relative;
 }
 
 .plantInfoCard h4 {
@@ -46,6 +47,32 @@ h1 {
 .plantInfoCard p {
     text-align: left;
 }
+
+.plantInfoCard #delete {
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.plantInfoCard #deleteButton {
+    background-color: rgba(137, 97, 97, 0.665);
+    border: none;
+    color:white;
+    font-size: 11px;
+    width: 176px;
+    height: 15px;
+    cursor: pointer;
+    padding: 5px 15px 5px 15px;
+    font-family: 'Chivo Mono', monospace;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    position:absolute; 
+    bottom: 15px;
+}
+
+
 
 /* Adding a new plant form  */
 h3 {

@@ -1,7 +1,26 @@
 import React from "react";
+import { plantsReducer } from "../context/PlantsContext";
+import { usePlantsContext } from '../hooks/usePlantsContext';
 
 function PlantInfo({key, plant}) {
-    console.log('im inside plant info', plant, key)
+
+    const {dispatch} = usePlantsContext();
+
+    const handleClick = async () => {
+        console.log('plants reducer id', plant._id)
+
+        const response = await fetch ('/plants/' + plant._id, {
+            method: 'DELETE'
+        })
+
+        const data = await response.json();
+ 
+        if (response.ok) {
+            dispatch({type:'DELETE_PLANT', payload: data})
+        }
+    }
+
+
     return (
         <div className="plantInfoCard">
             <h4>{plant.plant_name}</h4>
@@ -11,6 +30,9 @@ function PlantInfo({key, plant}) {
             <p><strong>Watering Schedule: </strong>{plant.watering}</p>
             <p><strong>Sunlight Needs: </strong>{plant.sunlight}</p>
             <p><strong>Additional Notes: </strong>{plant.additional_notes}</p>
+            <div id="delete">
+            <button id="deleteButton" onClick={handleClick}>Plant has moved (on)..</button>
+            </div>
         </div>
     )
 }
